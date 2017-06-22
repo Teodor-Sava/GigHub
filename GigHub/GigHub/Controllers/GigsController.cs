@@ -20,7 +20,7 @@ namespace GigHub.Controllers
             {
                 Genres = _context.Genres.ToList()
             };
-            
+
             return View(viewModel);
         }
         [Authorize]
@@ -33,8 +33,8 @@ namespace GigHub.Controllers
                 viewModel.Genres = _context.Genres.ToList();
                 return View("Create", viewModel);
             }
-            
-             var gig = new Gig
+
+            var gig = new Gig
             {
                 ArtistId = User.Identity.GetUserId(),
                 DateTime = viewModel.GetDateTime(),
